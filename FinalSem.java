@@ -1,4 +1,4 @@
-import.java.io.*;
+import java.io.*;
 class Cia
 {
       double cm;
@@ -9,6 +9,7 @@ class Cia
               System.out.println("Enter CIA Marks Out Of 20:");
               cm=Double.parseDouble(str);
       }
+}
 class EndSem extends Cia
 {
       double em;
@@ -23,18 +24,14 @@ class EndSem extends Cia
 }
 public class FinalSem extends EndSem
 {
-       double result;
-       void calcmarks() throws IoException
+       public static void main(String args[]) throws IOException
        {
-              super.get_marks();
-              result=cm+em;
-              System.out.println("Result is: "+result);
+             double result;
+             EndSem obj=new EndSem();
+             obj.get_marks();
+             result=obj.em+obj.cm;
+             System.out.println("Result Is: "+result);
         }
-        public static void main(String args[]) throws IOException
-        {
-               FinalSem obj=new FinalSem();
-               obj.calcmarks();
-         }
 }
 
 
